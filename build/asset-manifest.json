@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/LUNA-KK/art-gallery.git/static/css/main.ad36d5b7.css",
+    "main.js": "/LUNA-KK/art-gallery.git/static/js/main.5387c10c.js",
+    "static/js/787.bd91fb15.chunk.js": "/LUNA-KK/art-gallery.git/static/js/787.bd91fb15.chunk.js",
+    "static/media/clevelandart.png": "/LUNA-KK/art-gallery.git/static/media/clevelandart.91ca57e581d14d9e895f.png",
+    "static/media/filled-heart.png": "/LUNA-KK/art-gallery.git/static/media/filled-heart.fb6dc940211c19f9f3e2.png",
+    "static/media/heart.svg": "/LUNA-KK/art-gallery.git/static/media/heart.ff902fec0f17546279513500d9d3f5f8.svg",
+    "index.html": "/LUNA-KK/art-gallery.git/index.html",
+    "main.ad36d5b7.css.map": "/LUNA-KK/art-gallery.git/static/css/main.ad36d5b7.css.map",
+    "main.5387c10c.js.map": "/LUNA-KK/art-gallery.git/static/js/main.5387c10c.js.map",
+    "787.bd91fb15.chunk.js.map": "/LUNA-KK/art-gallery.git/static/js/787.bd91fb15.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ad36d5b7.css",
+    "static/js/main.5387c10c.js"
+  ]
+}
