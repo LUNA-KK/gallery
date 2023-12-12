@@ -1,1 +1,1 @@
-# online-Artgallery
+# Online Artgallery
