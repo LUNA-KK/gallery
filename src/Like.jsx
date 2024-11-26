@@ -1,18 +1,16 @@
-import { useAtom } from "jotai";
-import { liked } from "./store";
 import "./Like.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Like() {
-  const [like] = useAtom(liked);
+  const likes = JSON.parse(sessionStorage.getItem("likes")) || [];
 
   const settings = {
     dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    infinite: likes.length > 1,
+    speed: 1000,
+    slidesToShow: likes.length > 3 ? 3 : likes.length,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 600,
@@ -31,9 +29,6 @@ export default function Like() {
       },
     ],
   };
-
-  const likes = JSON.parse(sessionStorage.getItem("likes")) || like;
-  console.log(likes);
 
   return (
     <div>

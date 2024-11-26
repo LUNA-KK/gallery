@@ -3,27 +3,28 @@ import { ReactComponent as Heart } from "./asset/heart.svg";
 import filled from "./asset/filled-heart.png";
 import "./Art.css";
 import { useAtom } from "jotai";
-import { art, liked, pages } from "./store";
+import { art, pages } from "./store";
 import Header from "./Header";
 import React from "react";
 //&department=Chinese Art
 
 export default function Art() {
   const [artResponse] = useAtom(art);
-  const [, setLike] = useAtom(liked);
   const [, setNumber] = useAtom(pages);
+  const [likes, setLikes] = useState([]);
+  console.log(JSON.parse(sessionStorage.getItem("likes")));
   const [height, setHeight] = useState(400);
-
-  console.log(artResponse);
 
   const storeLike = (idx) => {
     sessionStorage.setItem(`${idx}url`, artResponse[idx].images.web.url);
     sessionStorage.setItem(`${idx}title`, artResponse[idx].title);
     sessionStorage.setItem(`${idx}`, idx);
-    setLike((prev) => {
-      sessionStorage.setItem("likes", JSON.stringify([...prev, idx]));
-      return [...prev, idx];
-    });
+
+    const existingLikes = JSON.parse(sessionStorage.getItem("likes")) || [];
+    const updatedLikes = [...existingLikes, idx];
+    sessionStorage.setItem("likes", JSON.stringify(updatedLikes));
+
+    setLikes(updatedLikes);
   };
 
   const handleSeeMore = () => {
@@ -50,7 +51,7 @@ export default function Art() {
                 )}
                 <div className="name-set">
                   <p className="art-title">{item.title}</p>
-                  {sessionStorage.getItem(`${idx}`) !== null ? (
+                  {likes.includes(idx) ? (
                     <img
                       src={filled}
                       alt="filled heart"
