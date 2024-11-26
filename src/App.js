@@ -1,7 +1,6 @@
 import "./App.css";
 import Art from "./Art";
 import Title from "./Title";
-import Loading from "./Loading";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Like from "./Like";
 import React from "react";
